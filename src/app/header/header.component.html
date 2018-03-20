@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button  type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" [routerLink]="['/']" > 个人博客</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/']">所有文章</a></li>
+        <li><a [routerLink]="['/cat_articles','angular']"  >angular</a></li>
+        <li><a [routerLink]="['/cat_articles','python']"  >python</a></li>
+        <li><a [routerLink]="['/cat_articles','其他']"  >其他</a></li>
+      </ul>
+    </div>
+  </div>
+
+</nav>

@@ -1,0 +1,30 @@
+<div class="col-lg-9">
+  <p-dataList [value]="articles" [paginator]="true" [rows]="apiFilter.limit" [lazy]="true" [totalRecords]="totalRecords"
+              (onLazyLoad)="loadArticlesLazy($event)">
+    <p-header>List of articles</p-header>
+    <!--<p-footer>Choose from the list.</p-footer>-->
+    <ng-template let-article pTemplate="item">
+      <div class="col-lg-12" >
+        <h3 style="color: #00a67c;font-weight: bold"><a [routerLink]="['/article',article.id]"> {{article.title}}</a> </h3>
+      </div>
+      <div class="col-lg-12">
+        <div class="ui-g-4">
+          <img src="{{article.image}}" width="100%">
+        </div>
+        <div class="ui-g-8">
+          <div>{{article.summary}}</div>
+          <br/>
+          <div class="col-lg-12">
+            &nbsp;&nbsp;<span class="glyphicon glyphicon-time"></span>:{{article.add_time|date:'yyyy-MM-dd'}}&nbsp;&nbsp;
+            <span class="glyphicon glyphicon-eye-open"></span> 阅读量:（{{article.hit_num}}）&nbsp;&nbsp;
+          </div>
+        </div>
+
+      </div>
+
+    </ng-template>
+  </p-dataList>
+</div>
+<div class="col-lg-3">
+  <app-hotarticle></app-hotarticle>
+</div>

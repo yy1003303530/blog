@@ -1,0 +1,6 @@
+<div class="row bg-success">
+  <h2>热门文章</h2>
+  <div *ngFor="let hot_article of hot_articles;let i = index">
+    <a [routerLink]="['/article',hot_article.id]">NO.{{i+1}}&nbsp; &nbsp;{{hot_article.title}}</a>
+  </div>
+</div>
