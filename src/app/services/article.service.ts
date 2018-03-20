@@ -5,7 +5,8 @@ import * as utils from './utils';
 
 @Injectable()
 export class ArticleService {
-  BaseUrl = 'http://127.0.0.1:8000/';
+  // BaseUrl = 'http://127.0.0.1:8000/';
+  BaseUrl = 'http://api.cxydog.com/';
   article_url: string = this.BaseUrl + 'articles/';
   // goodURL = 'http://shop.projectsedu.com:8001/goods';
   httpOptions = {
