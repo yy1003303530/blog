@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ArticleService} from '../../services/article.service';
 
 
 @Component({
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstpageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private article_service: ArticleService) { }
 
   ngOnInit() {
+    this.article_service.LaravelTest().subscribe(
+      (data) => {
+        console.log(data, 'laravel test');
+      },
+      (error) => {
+        console.log(error, 'laravel error');
+      },
+    );
   }
 
 }

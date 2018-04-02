@@ -5,8 +5,10 @@ import * as utils from './utils';
 
 @Injectable()
 export class ArticleService {
-  // BaseUrl = 'http://127.0.0.1:8000/';
-  BaseUrl = 'http://api.cxydog.com/';
+   // BaseUrl = 'http://127.0.0.1:8000/';
+   BaseUrl = 'http://api.cxydog.com/';
+   LaravelTestUrl = 'http://127.0.0.1/blog/public/api/test/1/yy'
+  // BaseUrl = 'http://api.cxydog.com/';
   article_url: string = this.BaseUrl + 'articles/';
   // goodURL = 'http://shop.projectsedu.com:8001/goods';
   httpOptions = {
@@ -25,5 +27,8 @@ export class ArticleService {
   }
   public GetArticle(id) {
     return this.http.get(this.article_url + id + '/', this.httpOptions);
+  }
+  public LaravelTest() {
+    return this.http.get(this.LaravelTestUrl, this.httpOptions);
   }
 }

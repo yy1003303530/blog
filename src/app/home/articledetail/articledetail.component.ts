@@ -29,7 +29,8 @@ export class ArticledetailComponent implements OnInit {
         (data) => {
           this.article = data;
          // 图片地址强加的服务器地址
-          this.content = (data['content'] + '').replace('/media/article/ueditor/', 'http://127.0.0.1:8000/media/article/ueditor/')
+          // this.content = (data['content'] + '').replace('/media/article/ueditor/', 'http://127.0.0.1:8000/media/article/ueditor/')
+          this.content = (data['content'] + '').replace('/media/article/ueditor/', 'http://api.cxydog.com/media/article/ueditor/')
           /*console.log(this.content, 'content', typeof (this.content))*/
           this.article.content = this.sanitizer.bypassSecurityTrustHtml(this.content);
         },
